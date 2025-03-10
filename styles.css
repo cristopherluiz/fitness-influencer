@@ -221,7 +221,8 @@ nav {
     position: relative;
     z-index: 2;
     color: white;
-    padding-top: 100px; /* Adjust this value as needed */
+    padding-top: 100px;
+    /* Adjust this value as needed */
 }
 
 .hero h1 {
@@ -428,6 +429,12 @@ footer {
 }
 
 /* Responsive Styles */
+@media (min-width: 751px) {
+    .hero {
+        background-image: url('./cover_img_4_desktop.jpg');
+    }
+}
+
 @media (max-width: 992px) {
 
     .hero-content,
