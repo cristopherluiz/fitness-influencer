@@ -74,8 +74,48 @@ const animateProgressBars = () => {
     });
 };
 
+// Lazy Load Sections and Images
+const lazyLoadSections = () => {
+    const lazySections = document.querySelectorAll('.lazy-section');
+    const lazyImages = document.querySelectorAll('.lazy-image');
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const section = entry.target;
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+                observer.unobserve(section);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const image = entry.target;
+                const src = image.getAttribute('data-src');
+                image.style.backgroundImage = `url(${src})`;
+                observer.unobserve(image);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    lazySections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        sectionObserver.observe(section);
+    });
+
+    lazyImages.forEach(image => {
+        imageObserver.observe(image);
+    });
+};
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     navSlide();
     animateProgressBars();
+    lazyLoadSections(); // Initialize lazy loading for sections and images
 });
