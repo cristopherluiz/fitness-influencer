@@ -256,7 +256,7 @@ nav {
 .about-image {
     width: 45%;
     height: 500px;
-    background-image: url('/api/placeholder/600/700');
+    background-image: url('about-img.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 10px;
