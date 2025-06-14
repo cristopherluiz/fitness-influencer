@@ -174,7 +174,7 @@ nav {
 }
 
 .hero {
-    background-image: url(cover_img.jpg);
+    background-image: url(cover_img_4_mobile.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -405,7 +405,6 @@ footer {
 }
 
 @media (max-width:992px) {
-
     .about-content,
     .about-image,
     .hero-content {
@@ -487,5 +486,90 @@ footer {
 
     .hero-content {
         width: 100%
+    }
+}
+
+/* Journey Section Specific Styles */
+.journey {
+    background-color: #e02a37;
+    padding: 80px 0;
+}
+
+.journey-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.journey .journey-content {
+    width: 50%;
+}
+
+.journey h2 {
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.journey h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: #ffffff;
+}
+
+.journey p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.journey-timeline {
+    width: 45%;
+    position: relative;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    border-left: 2px solid #ffffff;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.timeline-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.timeline-desc {
+    font-size: 0.9rem;
+    color: #f0f0f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .journey-container {
+        flex-direction: column;
+    }
+
+    .journey .journey-content,
+    .journey .journey-timeline {
+        width: 100%;
+    }
+
+    .journey-timeline {
+        margin-top: 40px;
     }
 }
